@@ -1,16 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>DarkVoidMod</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkVoidMod | Custom Game Mods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0f0f0f; color: #00ffcc; font-family: sans-serif; text-align: center; padding-top: 100px; }
-        .btn { display: inline-block; background-color: #00ffcc; color: #000; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #00ffcc; /* Turkoosi */
+            --hover-color: #00ccaa;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Himmeä heksagoni-taustakuvio */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(20, 20, 20, 0.5) 0%, rgba(8, 8, 8, 0) 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, rgba(8, 8, 8, 0) 30%);
+            background-blend-mode: screen;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Logo-alue */
+        .logo-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--bg-color);
+            background-color: var(--accent-color);
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            font-family: monospace; /* "DV" näyttää koodarimaisemmalta */
+        }
+        
+        /* Pieni "glow" efektin tapainen taakse */
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.2) 0%, rgba(8, 8, 8, 0) 70%);
+            z-index: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: var(--accent-color);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.3);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        /* Responsiivisuus */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            p { font-size: 1rem; }
+            .btn { padding: 14px 30px; }
+            .logo-icon { width: 60px; height: 60px; font-size: 2.5rem; }
+        }
+
     </style>
 </head>
 <body>
-    <h1>DarkVoidMod</h1>
-    <p>Custom mods and tools for single-player games.</p>
-    <a href="#" class="btn">Mods coming soon!</a>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo-icon">DV</div>
+        </div>
+        
+        <h1>DarkVoid<span>Mod</span></h1>
+        <p>Ammattimaiset, turvalliset ja kustomoidut modit yksinpeleihin. Pelikokemuksesi, sinun säännöilläsi.</p>
+        
+        <a href="#" class="btn">Lataa Modit (Tulossa)</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 DarkVoidMod. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
