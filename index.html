@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
             --bg-color: #080808;
             --card-bg: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #00ffcc; /* Turkoosi */
+            --accent-color: #00ffcc;
             --hover-color: #00ccaa;
             --font-family: 'Poppins', sans-serif;
         }
@@ -26,7 +26,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* Himmeä heksagoni-taustakuvio */
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(20, 20, 20, 0.5) 0%, rgba(8, 8, 8, 0) 20%),
                 radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, rgba(8, 8, 8, 0) 30%);
@@ -45,7 +44,6 @@
             margin: 0 auto;
         }
 
-        /* Logo-alue */
         .logo-container {
             margin-bottom: 30px;
             position: relative;
@@ -66,20 +64,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            font-family: monospace; /* "DV" näyttää koodarimaisemmalta */
-        }
-        
-        /* Pieni "glow" efektin tapainen taakse */
-        .logo-container::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(0, 255, 204, 0.2) 0%, rgba(8, 8, 8, 0) 70%);
-            z-index: 0;
+            font-family: monospace;
         }
 
         h1 {
@@ -129,15 +114,13 @@
             font-size: 0.9rem;
             border-top: 1px solid #1a1a1a;
         }
-        
-        /* Responsiivisuus */
+
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
             p { font-size: 1rem; }
             .btn { padding: 14px 30px; }
             .logo-icon { width: 60px; height: 60px; font-size: 2.5rem; }
         }
-
     </style>
 </head>
 <body>
@@ -148,14 +131,17 @@
         </div>
         
         <h1>DarkVoid<span>Mod</span></h1>
-        <p>Ammattimaiset, turvalliset ja kustomoidut modit yksinpeleihin. Pelikokemuksesi, sinun säännöilläsi.</p>
+        <p>Professional, safe, and custom mods for single-player games. Your gaming experience, defined by you.</p>
         
-        <a href="#" class="btn">Lataa Modit (Tulossa)</a>
+        <a href="#" class="btn">Download Mods (Coming Soon)</a>
     </div>
 
     <footer>
-        <p>&copy; 2023 DarkVoidMod. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> DarkVoidMod. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
