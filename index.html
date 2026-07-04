@@ -1,125 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith Client | Modern Minecraft Utility</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Zenith Hub – Lataa minun modit & sovellukset</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --bg-color: #080808;
-            --text-color: #e0e0e0;
-            /* Zenith-teema: Syvä purppura ja sähkönsininen */
-            --accent-color: #7000ff;
-            --hover-color: #8b3dff;
-            --font-family: 'Poppins', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-family);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.1) 0%, rgba(8, 8, 8, 0) 50%);
+            background: #0b0b0f;
+            font-family: 'Inter', sans-serif;
+            color: #ededee;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
         }
 
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            max-width: 800px;
+        .wrapper {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .logo-icon {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            background: linear-gradient(135deg, var(--accent-color), #00d2ff);
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
+        /* HEADER */
+        .header {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 0 30px rgba(112, 0, 255, 0.4);
-            margin: 0 auto 30px;
-            font-family: monospace;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding-bottom: 1.5rem;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin: 0 0 10px 0;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-icon {
+            background: linear-gradient(135deg, #7b2ffc, #4facfe);
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 700;
+            font-size: 1.4rem;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(79, 172, 254, 0.25);
         }
 
-        h1 span {
-            color: var(--accent-color);
+        .brand h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, #b6a0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            max-width: 600px;
-            line-height: 1.6;
+        .brand span {
+            font-weight: 400;
+            color: #8c8ca3;
+            font-size: 0.95rem;
+            -webkit-text-fill-color: #8c8ca3;
+            background: none;
+            margin-left: 4px;
         }
 
-        .btn {
-            background: linear-gradient(90deg, var(--accent-color), #00d2ff);
-            color: white;
-            padding: 16px 40px;
-            text-decoration: none;
-            border-radius: 50px;
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #3a3a4a;
+            color: #cacad6;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: #7b2ffc;
+            color: #fff;
+            background: rgba(123, 47, 252, 0.08);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7b2ffc, #4facfe);
             border: none;
-            cursor: pointer;
+            color: #fff;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 16px rgba(79, 172, 254, 0.25);
         }
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(112, 0, 255, 0.6);
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 26px rgba(79, 172, 254, 0.4);
         }
 
-        footer {
-            padding: 20px;
+        /* HERO */
+        .hero {
             text-align: center;
-            color: #555;
+            padding: 2rem 0 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            max-width: 700px;
+            margin: 0 auto 0.6rem;
+        }
+
+        .hero h2 i {
+            background: linear-gradient(135deg, #b88aff, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a1a1b5;
+            max-width: 600px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .search-box {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #16161e;
+            border-radius: 80px;
+            padding: 0.2rem 0.2rem 0.2rem 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #2a2a36;
+            transition: 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: #7b2ffc;
+            box-shadow: 0 0 0 3px rgba(123, 47, 252, 0.2);
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 0.8rem 0;
+            font-size: 1rem;
+            color: #efeff5;
+            width: 100%;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: #6a6a80;
+        }
+
+        .search-box button {
+            background: linear-gradient(135deg, #7b2ffc, #4facfe);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: 0.15s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-box button:hover {
+            opacity: 0.9;
+            transform: scale(0.97);
+        }
+
+        /* DOWNLOAD GRID */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 3.5rem 0 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title small {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #8c8ca3;
+            margin-left: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #13131b;
+            border-radius: 24px;
+            padding: 1.8rem 1.4rem 1.6rem;
+            border: 1px solid #22222e;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: #4a3a7a;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0.2rem 0 0.3rem;
+        }
+
+        .card .badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            background: #252537;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            color: #b0b0ca;
+            margin-top: 0.2rem;
+            width: fit-content;
+        }
+
+        .card p {
+            color: #acacc2;
+            font-size: 0.95rem;
+            margin: 0.6rem 0 1.2rem;
+            flex: 1;
+        }
+
+        .card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #72728c;
+            border-top: 1px solid #1f1f2b;
+            padding-top: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .card .meta .version {
+            background: #1b1b26;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #7b2ffc, #4facfe);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-download:hover {
+            opacity: 0.85;
+            transform: scale(0.96);
+        }
+
+        .btn-download.outline {
+            background: transparent;
+            border: 1px solid #3a3a4a;
+            color: #cacad6;
+        }
+
+        .btn-download.outline:hover {
+            border-color: #7b2ffc;
+            color: #fff;
+            background: rgba(123, 47, 252, 0.06);
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 4.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1a1a24;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
             font-size: 0.9rem;
+            color: #6a6a80;
+        }
+
+        .footer a {
+            color: #9b9bb6;
+            text-decoration: none;
+            margin: 0 0.6rem;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIIVISUUS */
+        @media (max-width: 680px) {
+            .header {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .search-box {
+                flex-wrap: wrap;
+                background: transparent;
+                border: none;
+                padding: 0;
+                gap: 0.6rem;
+            }
+
+            .search-box input {
+                background: #16161e;
+                border: 1px solid #2a2a36;
+                border-radius: 60px;
+                padding: 0.8rem 1.4rem;
+            }
+
+            .search-box button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+<div class="wrapper">
 
-    <div class="container">
-        <div class="logo-icon">ZC</div>
-        
-        <h1>Zenith<span>Client</span></h1>
-        <p>Ultra-lightweight and modular utility client for Minecraft. Built for performance and optimized for anarchy.</p>
-        
-        <a href="#" class="btn">View Source on GitHub</a>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+            <h1>Zenith<span>Hub</span></h1>
+        </div>
+        <div class="header-actions">
+            <a href="https://github.com/kayttajanimesi" class="btn-outline" target="_blank">🐙 GitHub</a>
+            <a href="#downloads" class="btn-primary">↓ Lataukset</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Lataa minun <i>pelimodit & työkalut</i></h2>
+        <p>Ilmaisia, avoimen lähdekoodin resursseja Minecraftiin ja muihin peleihin. Päivitän säännöllisesti.</p>
+
+        <!-- HAKU / SUODATIN (toimii jo CSS:llä, voit myöhemmin lisätä JS-hauskuutta) -->
+        <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Etsi modia, sovellusta…" id="searchInput" />
+            <button id="searchBtn">Hae</button>
+        </div>
+    </section>
+
+    <!-- LATAUSKORTIT -->
+    <h2 class="section-title" id="downloads">
+        📦 Ladattavat tiedostot
+        <small>— klikkaa ja lataa</small>
+    </h2>
+
+    <div class="grid" id="cardGrid">
+
+        <!-- KORTTI 1 – Minecraft-modi -->
+        <div class="card" data-name="zenith-client">
+            <div class="icon">⛏️</div>
+            <h3>Zenith Client</h3>
+            <span class="badge">Minecraft 1.20.4</span>
+            <p>Kevyt utility-client anarkia- ja PVP-palvelimille. Sis. ESP, zoom, clicker ja paljon muuta.</p>
+            <div class="meta">
+                <span class="version">v2.1.0</span>
+                <a href="#" class="btn-download">Lataa .jar</a>
+            </div>
+        </div>
+
+        <!-- KORTTI 2 – toinen modi -->
+        <div class="card" data-name="better-farming">
+            <div class="icon">🌾</div>
+            <h3>Better Farming</h3>
+            <span class="badge">Minecraft 1.19.2</span>
+            <p>Laajentaa maanviljelyä: uusia kasveja, työkaluja ja automaattinen kastelujärjestelmä.</p>
+            <div class="meta">
+                <span class="version">v1.4.0</span>
+                <a href="#" class="btn-download">Lataa .jar</a>
+            </div>
+        </div>
+
+        <!-- KORTTI 3 – työpöytäsovellus -->
+        <div class="card" data-name="launcher-tool">
+            <div class="icon">🖥️</div>
+            <h3>Mod Launcher Tool</h3>
+            <span class="badge">Windows / Linux</span>
+            <p>Helppo työkalu, jolla hallitset asennettuja modeja ja käynnistät pelin eri profiileilla.</p>
+            <div class="meta">
+                <span class="version">v0.9.3</span>
+                <a href="#" class="btn-download">Lataa .exe</a>
+            </div>
+        </div>
+
+        <!-- KORTTI 4 – resurssipaketti -->
+        <div class="card" data-name="zenith-resourcepack">
+            <div class="icon">🎨</div>
+            <h3>Zenith Resource Pack</h3>
+            <span class="badge">Minecraft 1.20.x</span>
+            <p>Tyylikäs 16x-resurssipaketti, joka parantaa näkyvyyttä PVP:ssä ja antaa pelille modernin ilmeen.</p>
+            <div class="meta">
+                <span class="version">v3.0.1</span>
+                <a href="#" class="btn-download">Lataa .zip</a>
+            </div>
+        </div>
+
+        <!-- KORTTI 5 – apusovellus (Python) -->
+        <div class="card" data-name="seed-finder">
+            <div class="icon">🔍</div>
+            <h3>Seed Finder</h3>
+            <span class="badge">Python 3.10+</span>
+            <p>Etsii Minecraft-siemeniä tiettyjen biomejen tai rakenteiden perusteella. Komentorivityökalu.</p>
+            <div class="meta">
+                <span class="version">v1.2.0</span>
+                <a href="#" class="btn-download">Lataa .py</a>
+            </div>
+        </div>
+
+        <!-- KORTTI 6 – Discord-botti (lisäherkkuna) -->
+        <div class="card" data-name="discord-mod-bot">
+            <div class="icon">🤖</div>
+            <h3>Mod Update Bot</h3>
+            <span class="badge">Discord</span>
+            <p>Discord-botti, joka ilmoittaa automaattisesti, kun julkaiset uuden modiversion GitHubissa.</p>
+            <div class="meta">
+                <span class="version">v1.0.0</span>
+                <a href="#" class="btn-download">Lataa .zip</a>
+            </div>
+        </div>
+
     </div>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Zenith Client. Open Source Project.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <span>© 2026 <strong>Zenith Hub</strong> — kaikki modit omia tuotoksiani</span>
+        </div>
+        <div>
+            <a href="https://github.com/kayttajanimesi" target="_blank">GitHub</a>
+            <a href="#">Yhteistyö</a>
+            <a href="#">🚧 Wiki</a>
+        </div>
     </footer>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+</div>
+
+<!-- YKSINKERTAINEN HAKU (suodattaa kortteja) -->
+<script>
+    (function() {
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const cards = document.querySelectorAll('.card');
+
+        function filterCards() {
+            const query = searchInput.value.toLowerCase().trim();
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const text = card.textContent.toLowerCase();
+                const match = query === '' || name.includes(query) || text.includes(query);
+                card.style.display = match ? '' : 'none';
+            });
+        }
+
+        searchBtn.addEventListener('click', filterCards);
+        searchInput.addEventListener('input', filterCards);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') filterCards();
+        });
+    })();
+</script>
 </body>
 </html>
