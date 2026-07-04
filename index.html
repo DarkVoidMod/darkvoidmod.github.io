@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarkVoidMod | Custom Game Mods</title>
+    <title>Zenith Client | Modern Minecraft Utility</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #080808;
-            --card-bg: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #00ffcc;
-            --hover-color: #00ccaa;
+            /* Zenith-teema: Syvä purppura ja sähkönsininen */
+            --accent-color: #7000ff;
+            --hover-color: #8b3dff;
             --font-family: 'Poppins', sans-serif;
         }
 
@@ -27,9 +27,7 @@
             flex-direction: column;
             min-height: 100vh;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(20, 20, 20, 0.5) 0%, rgba(8, 8, 8, 0) 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, rgba(8, 8, 8, 0) 30%);
-            background-blend-mode: screen;
+                radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.1) 0%, rgba(8, 8, 8, 0) 50%);
         }
 
         .container {
@@ -44,34 +42,26 @@
             margin: 0 auto;
         }
 
-        .logo-container {
-            margin-bottom: 30px;
-            position: relative;
-        }
-
         .logo-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--bg-color);
-            background-color: var(--accent-color);
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
+            color: white;
+            background: linear-gradient(135deg, var(--accent-color), #00d2ff);
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 0 30px rgba(112, 0, 255, 0.4);
+            margin: 0 auto 30px;
             font-family: monospace;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0 0 10px 0;
             font-weight: 700;
-            letter-spacing: -1px;
         }
 
         h1 span {
@@ -87,8 +77,8 @@
         }
 
         .btn {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+            background: linear-gradient(90deg, var(--accent-color), #00d2ff);
+            color: white;
             padding: 16px 40px;
             text-decoration: none;
             border-radius: 50px;
@@ -96,15 +86,13 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: var(--hover-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(112, 0, 255, 0.6);
         }
 
         footer {
@@ -112,32 +100,22 @@
             text-align: center;
             color: #555;
             font-size: 0.9rem;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            p { font-size: 1rem; }
-            .btn { padding: 14px 30px; }
-            .logo-icon { width: 60px; height: 60px; font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-container">
-            <div class="logo-icon">DV</div>
-        </div>
+        <div class="logo-icon">ZC</div>
         
-        <h1>DarkVoid<span>Mod</span></h1>
-        <p>Professional, safe, and custom mods for single-player games. Your gaming experience, defined by you.</p>
+        <h1>Zenith<span>Client</span></h1>
+        <p>Ultra-lightweight and modular utility client for Minecraft. Built for performance and optimized for anarchy.</p>
         
-        <a href="#" class="btn">Download Mods (Coming Soon)</a>
+        <a href="#" class="btn">View Source on GitHub</a>
     </div>
 
     <footer>
-        <p>&copy; <span id="year"></span> DarkVoidMod. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Zenith Client. Open Source Project.</p>
     </footer>
 
     <script>
